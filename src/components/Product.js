@@ -40,19 +40,28 @@ const Product = ({ product, basket, setBasket, total, money }) => {
   return (
     <>
       <div className="product">
-        <h3>{product.title}</h3>
-        <div className="price">${product.price}</div>
-        <div className="actions">
-          <button disabled={!basketItem} onClick={removeBasket}>
-            Sat
-          </button>
+        <div className="products-container">
+            <h3>{product.title}</h3>
+            <div className="price">${product.price}</div>
+            <div className="image-container">
+              <img className="image" src={product.image} alt="image" />
+            </div>
+          </div>
 
-          <button disabled={total + product.price > money} onClick={addBasket}>
-            Al
-          </button>
-          <span className="amount">
-            {(basketItem && basketItem.amount) || 0}
-          </span>
+          <div className="actions">
+            <button disabled={!basketItem} onClick={removeBasket}>
+              Sat
+            </button>
+
+            <button
+              disabled={total + product.price > money}
+              onClick={addBasket}
+            >
+              Al
+            </button>
+            <span className="amount">
+              {(basketItem && basketItem.amount) || 0}
+            </span>
         </div>
       </div>
     </>

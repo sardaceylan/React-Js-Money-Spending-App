@@ -6,7 +6,7 @@ import Basket from "./components/Basket";
 import products from "./products.json";
 
 const App = () => {
-  const [money, setMoney] = useState(100000);
+  const [money, setMoney] = useState(1000000000);
   const [basket, setBasket] = useState([]);
   const [total, setTotal] = useState(0);
   useEffect(() => {
@@ -26,10 +26,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header total={total} money={money} />
-      <button className="reset" onClick={resetBasket}>
-        Sepeti Sıfırla
-      </button>
+      <Header total={total} money={money} resetBasket={resetBasket} />
+
       {products.map((product) => (
         <Product
           key={product.id}
