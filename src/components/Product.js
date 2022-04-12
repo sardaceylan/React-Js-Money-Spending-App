@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Product = ({ product, basket, setBasket }) => {
+const Product = ({ product, basket, setBasket, total, money }) => {
   const basketItem = basket.find((item) => item.id === product.id);
   const basketWithoutCurrent = basket.filter((item) => item.id !== product.id);
 
@@ -45,9 +45,13 @@ const Product = ({ product, basket, setBasket }) => {
         <h3>{product.title}</h3>
         <div className="price">${product.price}</div>
         <div className="actions">
-          <button onClick={removeBasket}>Sat</button>
+          <button disabled={!basketItem} onClick={removeBasket}>
+            Sat
+          </button>
 
-          <button onClick={addBasket}>Al</button>
+          <button disabled={total + product.price > money} onClick={addBasket}>
+            Al
+          </button>
           <span className="amount">
             {(basketItem && basketItem.amount) || 0}
           </span>
