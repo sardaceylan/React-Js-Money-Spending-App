@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const Product = ({ product, basket, setBasket, total, money }) => {
   const basketItem = basket.find((item) => item.id === product.id);
   const basketWithoutCurrent = basket.filter((item) => item.id !== product.id);
