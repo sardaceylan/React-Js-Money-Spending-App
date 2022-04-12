@@ -5,7 +5,7 @@ import Product from "./components/Product";
 import Basket from "./components/Basket";
 import products from "./products.json";
 
-function App() {
+const App = () => {
   const [money, setMoney] = useState(100000);
   const [basket, setBasket] = useState([]);
   const [total, setTotal] = useState(0);
