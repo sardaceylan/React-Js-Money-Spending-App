@@ -5,8 +5,18 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #ddd;
 }
 
+.product {
+  padding: 10px;
+  background: #ddd;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 1.24rem;
+}
+.amount {
+  margin-left: 1rem;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
